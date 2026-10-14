@@ -166,147 +166,133 @@
     /* ============================================================
        HERO — Mural art backdrop
     ============================================================ */
-    .hero {
-      position: relative;
-      text-align: center;
-      padding: 90px 0 60px;
-      background:
-        radial-gradient(ellipse at 50% 0%, rgba(176, 106, 59, 0.15), transparent 60%),
-        var(--ivory);
-      overflow: hidden;
-    }
+  
+/* HERO — Full background wedding image */
+.hero {
+  position: relative;
+  min-height: 78vh;
+  min-height: 78svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 90px 0;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--emerald);
+  background-image:
+    linear-gradient(
+      rgba(7, 25, 18, 0.58),
+      rgba(7, 25, 18, 0.68)
+    ),
+    url("hero.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-    /* Side mural motifs */
-    .hero::before,
-    .hero::after {
-      content: '❁';
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 200px;
-      color: rgba(14, 42, 31, 0.05);
-      pointer-events: none;
-      line-height: 1;
-    }
-    .hero::before { left: -40px; }
-    .hero::after  { right: -40px; }
+/* Elegant gold decorative borders */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(232, 201, 138, 0.65);
+  pointer-events: none;
+  z-index: -1;
+}
 
-    .hero-inner { position: relative; z-index: 2; }
+.hero::after {
+  content: "✦";
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold-soft);
+  font-size: 20px;
+  pointer-events: none;
+}
 
-    .hero .eyebrow {
-      font-size: 11px;
-      letter-spacing: 8px;
-      color: var(--copper);
-    }
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
 
-    h1 {
-      font-weight: 500;
-      font-size: clamp(56px, 10vw, 108px);
-      line-height: 1;
-      margin: 18px 0 14px;
-      color: var(--emerald);
-      letter-spacing: -1px;
-    }
+.hero .eyebrow {
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: var(--gold-soft);
+}
 
-    h1 .amp {
-      display: inline-block;
-      color: var(--copper);
-      font-weight: 300;
-      font-style: italic;
-      margin: 0 6px;
-      transform: translateY(-4px);
-    }
+.hero h1 {
+  font-weight: 500;
+  font-size: clamp(52px, 10vw, 108px);
+  line-height: 1.1;
+  margin: 22px 0;
+  color: var(--ivory);
+  letter-spacing: -1px;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
 
-    .hero p {
-      color: #5c5a4c;
-      line-height: 1.9;
-      font-size: 19px;
-      max-width: 580px;
-      margin: 0 auto 32px;
-      font-style: italic;
-    }
+.hero h1 .amp {
+  display: inline-block;
+  color: var(--gold-soft);
+  font-weight: 300;
+  font-style: italic;
+  margin: 0 6px;
+}
 
-    .button {
-      display: inline-block;
-      background: var(--emerald);
-      color: var(--gold-soft);
-      border: 2px solid var(--gold);
-      border-radius: 2px;
-      padding: 15px 40px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(14, 42, 31, 0.2);
-    }
+.hero p {
+  color: #fff8ed;
+  line-height: 1.9;
+  font-size: clamp(16px, 2vw, 20px);
+  max-width: 580px;
+  margin: 0 auto 32px;
+  font-style: italic;
+}
 
-    .button::before {
-      content: '';
-      position: absolute;
-      inset: 4px;
-      border: 1px solid rgba(232, 201, 138, 0.35);
-      pointer-events: none;
-      transition: all 0.3s ease;
-    }
+.hero .button {
+  background: var(--gold);
+  color: var(--emerald);
+  border-color: var(--gold-soft);
+}
 
-    .button:hover {
-      background: var(--copper);
-      color: var(--cream);
-      border-color: var(--gold-soft);
-      box-shadow: 0 12px 30px rgba(176, 106, 59, 0.35);
-      transform: translateY(-2px);
-    }
+.hero .button::before {
+  border-color: rgba(14, 42, 31, 0.25);
+}
 
-    .button-outline {
-      background: transparent;
-      color: var(--emerald);
-      border: 2px solid var(--emerald);
-      box-shadow: none;
-    }
+.hero .button:hover {
+  background: var(--ivory);
+  color: var(--emerald);
+  border-color: var(--ivory);
+}
 
-    .button-outline::before {
-      border-color: rgba(14, 42, 31, 0.15);
-    }
+/* Mobile hero */
+@media (max-width: 680px) {
+  .hero {
+    min-height: 72vh;
+    min-height: 72svh;
+    padding: 75px 0;
+  }
 
-    .button-outline:hover {
-      background: var(--emerald);
-      color: var(--gold-soft);
-      border-color: var(--emerald);
-    }
+  .hero::before {
+    inset: 12px;
+  }
 
-    /* Hero image — framed like temple art */
-    .hero-frame {
-      position: relative;
-      margin: 48px auto 0;
-      max-width: 980px;
-      padding: 14px;
-      background: var(--emerald);
-      border: 1px solid var(--gold);
-      box-shadow: 0 24px 50px -18px rgba(14, 42, 31, 0.5);
-    }
+  .hero .eyebrow {
+    letter-spacing: 3px;
+    font-size: 9px;
+  }
 
-    .hero-frame::before,
-    .hero-frame::after {
-      content: '';
-      position: absolute;
-      width: 26px;
-      height: 26px;
-      border: 2px solid var(--gold);
-    }
-    .hero-frame::before { top: 6px; left: 6px; border-right: 0; border-bottom: 0; }
-    .hero-frame::after  { bottom: 6px; right: 6px; border-left: 0; border-top: 0; }
+  .hero h1 {
+    font-size: clamp(44px, 11vw, 68px);
+  }
 
-    .hero-image {
-      width: 100%;
-      height: clamp(300px, 55vw, 540px);
-      object-fit: cover;
-      display: block;
-      filter: saturate(0.95) contrast(1.05);
-    }
+  .hero p {
+    padding: 0 8px;
+  }
+}
+
 
     /* ============================================================
        SECTIONS
@@ -634,26 +620,33 @@
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <span class="eyebrow">Together is a beautiful place to be</span>
-        <h1>Aami <span class="amp">&</span> Nithi</h1>
-        <p>
-          One beautiful beginning, countless precious memories.<br>
-          Welcome to our little corner of love.
-        </p>
-        <a href="#gallery" class="button">Explore Our Memories</a>
 
-        <div class="hero-frame">
-          <img
-            class="hero-image"
-            src="hero.webp"
-            alt="Kerala wedding celebration"
-          >
-        </div>
-      </div>
-    </section>
+    
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+
+    <span class="eyebrow">
+      Together is a beautiful place to be
+    </span>
+
+    <h1>
+      Aami <span class="amp">&amp;</span> Nithi
+    </h1>
+
+    <p>
+      One beautiful beginning, countless precious memories.
+      <br>
+      Welcome to our little corner of love.
+    </p>
+
+    <a href="#story" class="button">
+      Explore Our Memories
+    </a>
+
+  </div>
+</section>
+
 
     <!-- STORY -->
     <section id="story">
