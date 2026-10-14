@@ -445,102 +445,207 @@
       border-color: var(--gold);
     }
 
-    /* ============================================================
-       LOGIN — Kerala door (padipura) feel
-    ============================================================ */
-    .login-area {
-      background:
-        linear-gradient(180deg, var(--ivory) 0%, #efe6d4 100%);
-      border-top: 3px double var(--gold);
-      border-bottom: 3px double var(--gold);
-    }
+  
+/* ===== WEDDING GUEST LOGIN ===== */
 
-    .login-card {
-      max-width: 460px;
-      margin: auto;
-      background: var(--cream);
-      border: 1px solid var(--copper);
-      padding: 44px 38px 38px;
-      position: relative;
-      box-shadow:
-        0 24px 50px -20px rgba(14, 42, 31, 0.35),
-        inset 0 0 0 6px var(--cream),
-        inset 0 0 0 7px rgba(212, 162, 76, 0.4);
-    }
+.login-area {
+  padding: 100px 20px;
+  background: #f8f5ed;
+  position: relative;
+  overflow: hidden;
+}
 
-    .login-card::before,
-    .login-card::after {
-      content: '❋';
-      position: absolute;
-      font-size: 22px;
-      color: var(--copper);
-      top: -14px;
-      background: var(--cream);
-      padding: 0 8px;
-    }
-    .login-card::before { left: 30px; }
-    .login-card::after  { right: 30px; }
+.login-area .section-heading {
+  max-width: 620px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
 
-    .login-card h3 {
-      font-size: 34px;
-      font-weight: 500;
-      text-align: center;
-      margin: 0 0 8px;
-      color: var(--emerald);
-      letter-spacing: 0.5px;
-    }
+.login-area .eyebrow {
+  display: inline-block;
+  color: #75866b;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
 
-    .login-card > p {
-      color: #6b6858;
-      text-align: center;
-      font: 16px/1.7 'Cormorant Garamond', serif;
-      font-style: italic;
-      margin-bottom: 30px;
-    }
+.login-area .section-heading h2 {
+  color: #294638;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 18px;
+}
 
-    label {
-      display: block;
-      font: 13px 'Cormorant Garamond', serif;
-      margin: 18px 0 8px;
-      color: var(--emerald);
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+.login-area .section-heading p {
+  color: #77786f;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+}
 
-    input {
-      width: 100%;
-      border: 1px solid rgba(176, 106, 59, 0.4);
-      background: white;
-      padding: 14px 16px;
-      font: 16px 'Cormorant Garamond', serif;
-      transition: all 0.25s;
-      color: var(--ink);
-      border-radius: 2px;
-    }
+/* Login Card */
 
-    input:focus {
-      outline: none;
-      border-color: var(--copper);
-      box-shadow: 0 0 0 3px rgba(176, 106, 59, 0.15);
-    }
+.login-card {
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 42px 38px 28px;
+  background: #fffefa;
+  border: 1px solid #e7e4d8;
+  border-radius: 6px;
+  box-shadow: 0 18px 50px rgba(41, 70, 56, 0.08);
+  text-align: center;
+}
 
-    .login-card .button {
-      width: 100%;
-      margin-top: 26px;
-      padding: 15px;
-      font-size: 13px;
-    }
+.login-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #edf0e7;
+  color: #62775b;
+  font-size: 32px;
+}
 
-    #loginMessage {
-      font: 15px/1.6 'Cormorant Garamond', serif;
-      overflow-wrap: anywhere;
-      margin-top: 20px;
-      color: var(--copper);
-      text-align: center;
-      font-style: italic;
-      min-height: 24px;
-    }
+.login-card h3 {
+  color: #294638;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0 0 12px;
+}
+
+.login-card .login-description {
+  color: #85857b;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0 0 30px;
+}
+
+/* Form Fields */
+
+#loginForm {
+  text-align: left;
+}
+
+#loginForm .form-group {
+  margin-bottom: 22px;
+}
+
+#loginForm label {
+  display: block;
+  color: #394b3e;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+#loginForm input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 16px;
+  border: 1px solid #dedfd5;
+  border-radius: 4px;
+  outline: none;
+  background: #fff;
+  color: #294638;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+#loginForm input::placeholder {
+  color: #b0afa5;
+}
+
+#loginForm input:focus {
+  border-color: #829579;
+  box-shadow: 0 0 0 3px rgba(130, 149, 121, 0.12);
+}
+
+/* Login Button */
+
+#loginForm .button {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 5px;
+  padding: 15px 20px;
+  border: 1px solid #294638;
+  border-radius: 4px;
+  background: #294638;
+  color: #fffefa;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+}
+
+#loginForm .button:hover {
+  background: #3d5b49;
+  transform: translateY(-2px);
+}
+
+#loginForm .button:focus-visible {
+  outline: 3px solid #9aab8d;
+  outline-offset: 3px;
+}
+
+/* Login Message */
+
+#loginMessage {
+  color: #62775b;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 16px 0 0;
+}
+
+/* Card Footer */
+
+.login-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #eeece3;
+  margin-top: 28px;
+  padding-top: 20px;
+  color: #929287;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+  .login-area {
+    padding: 70px 16px;
+  }
+
+  .login-area .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .login-card {
+    padding: 32px 22px 24px;
+  }
+
+  .login-card h3 {
+    font-size: 25px;
+  }
+
+  #loginForm input {
+    padding: 14px;
+  }
+}
 
     /* ============================================================
        FOOTER
@@ -740,33 +845,70 @@
 </section>
 
 
-    <!-- LOGIN -->
-    <section id="login" class="login-area">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">For our favourite people</span>
-          <h2>More Memories Await</h2>
-          <p>Sign in with your invited guest account to view the complete gallery.</p>
+    
+<!-- LOGIN -->
+<section id="login" class="login-area">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="eyebrow">A Little More Love</span>
+      <h2>Memories Made for You</h2>
+      <p>
+        Some moments are too special to share with everyone.
+        Sign in to unlock our private wedding gallery.
+      </p>
+    </div>
+
+    <div class="login-card">
+      <div class="login-icon" aria-hidden="true">♡</div>
+
+      <h3>Welcome, Dear Guest</h3>
+      <p class="login-description">
+        We're so glad you're part of our story.
+        Enter your invited guest details to continue.
+      </p>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
         </div>
 
-        <div class="login-card">
-          <h3>Guest Login</h3>
-          <p>Welcome back. We're happy to have you here.</p>
-
-          <form id="loginForm">
-            <label for="email">Email address</label>
-            <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required>
-
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="Your password" autocomplete="current-password" required>
-
-            <button class="button" type="submit">Sign In & View Gallery</button>
-          </form>
-
-          <p id="loginMessage" role="status"></p>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
         </div>
+
+        <button class="button" type="submit">
+          Unlock Our Memories ♡
+        </button>
+      </form>
+
+      <p id="loginMessage" role="status" aria-live="polite"></p>
+
+      <div class="login-footer">
+        <span>Made with love</span>
+        <span>Aami &amp; Nithi</span>
       </div>
-    </section>
+    </div>
+
+  </div>
+</section>
+
   </main>
 
   <footer>
